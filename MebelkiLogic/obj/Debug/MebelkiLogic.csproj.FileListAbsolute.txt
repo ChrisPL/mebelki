@@ -1,0 +1,8 @@
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\bin\Debug\MebelkiLogic.dll
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\bin\Debug\MebelkiLogic.pdb
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\bin\Debug\MebelkiModel.dll
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\bin\Debug\MebelkiModel.pdb
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\bin\Debug\pl\MebelkiModel.resources.dll
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\obj\Debug\MebelkiLogic.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\obj\Debug\MebelkiLogic.dll
+C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiLogic\obj\Debug\MebelkiLogic.pdb
