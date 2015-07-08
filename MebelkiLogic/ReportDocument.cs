@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using MebelkiModel;
 using System.Threading;
 using System.Resources;
@@ -16,6 +17,9 @@ namespace MebelkiLogic
         private Dictionary<Board, int> _boardsCount;
 
         private ResourceManager _resMen;
+
+        private ReportDocumentGrid _grid;
+
 
         public ReportDocument(OrderSingleton order, ResourceManager resMen)
         {
@@ -76,13 +80,67 @@ namespace MebelkiLogic
             font = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular, GraphicsUnit.Point);
 
             //test
-            e.Graphics.DrawString(string.Join(" ", new string[]
-            {
-                thickness, color, height, width, boardSize, pricesm, price, width1, width2, height1, height2,
-                totalVaneer, vaneerPriceLm, vaneerPrice, quantity, boardPrice
-            }), font, Brushes.Black, 20, 60);
+            //e.Graphics.DrawString(string.Join(" ", new string[]
+            //{
+            //    thickness, color, height, width, boardSize, pricesm, price, width1, width2, height1, height2,
+            //    totalVaneer, vaneerPriceLm, vaneerPrice, quantity, boardPrice
+            //}), font, Brushes.Black, 20, 60);
 
+            _grid = new ReportDocumentGrid(
+                e.Graphics, font,
+                thickness,
+                color,
+                height,
+                width,
+                boardSize,
+                pricesm,
+                price,
+                width1,
+                width2,
+                height1,
+                height2,
+                totalVaneer,
+                vaneerPriceLm,
+                vaneerPrice,
+                quantity,
+                boardPrice
+                );
 
+            _grid.PrintCells(e.Graphics, 20, 60);
+
+            int x = 22;
+            e.Graphics.DrawString(thickness, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(thickness, font).ToSize().Width + 5;
+            e.Graphics.DrawString(color, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(color, font).ToSize().Width + 5;
+            e.Graphics.DrawString(height, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(height, font).ToSize().Width + 5;
+            e.Graphics.DrawString(width, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(width, font).ToSize().Width + 5;
+            e.Graphics.DrawString(boardSize, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(boardSize, font).ToSize().Width + 5;
+            e.Graphics.DrawString(pricesm, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(pricesm, font).ToSize().Width + 5;
+            e.Graphics.DrawString(price, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(price, font).ToSize().Width + 5;
+            e.Graphics.DrawString(width1, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(width1, font).ToSize().Width + 5;
+            e.Graphics.DrawString(width2, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(width2, font).ToSize().Width + 5;
+            e.Graphics.DrawString(height1, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(height1, font).ToSize().Width + 5;
+            e.Graphics.DrawString(height2, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(height2, font).ToSize().Width + 5;
+            e.Graphics.DrawString(totalVaneer, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(totalVaneer, font).ToSize().Width + 5;
+            e.Graphics.DrawString(vaneerPriceLm, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(vaneerPriceLm, font).ToSize().Width + 5;
+            e.Graphics.DrawString(vaneerPrice, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(vaneerPrice, font).ToSize().Width + 5;
+            e.Graphics.DrawString(quantity, font, Brushes.Black, x, 62);
+            x += e.Graphics.MeasureString(quantity, font).ToSize().Width + 5;
+            e.Graphics.DrawString(boardPrice, font, Brushes.Black, x, 62);
+          //  x += e.Graphics.MeasureString(boardPrice, font).ToSize().Width + 5;
 
 
             Rectangle[] rects = new Rectangle[]
