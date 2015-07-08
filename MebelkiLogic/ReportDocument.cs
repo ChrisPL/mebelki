@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using MebelkiModel;
+using System.Threading;
+using System.Resources;
 
 namespace MebelkiLogic
 {
@@ -13,8 +15,12 @@ namespace MebelkiLogic
 
         private Dictionary<Board, int> _boardsCount;
 
-        public ReportDocument(OrderSingleton order)
+        private ResourceManager _resMen;
+
+        public ReportDocument(OrderSingleton order, ResourceManager resMen)
         {
+            DefaultPageSettings.Landscape = true;
+            _resMen = resMen;
             _order = order;
 
             CountBoards();
@@ -45,9 +51,40 @@ namespace MebelkiLogic
 
         private void PrintHeader(PrintPageEventArgs e)
         {
+            var ci = Thread.CurrentThread.CurrentCulture;
+
             var font = new Font(FontFamily.GenericSerif, 12, FontStyle.Bold, GraphicsUnit.Point);
             e.Graphics.DrawString(_order.Client, font, Brushes.Black, 20, 20);
-            /*
+
+            string thickness = _resMen.GetString("thickness", ci);
+            string color = _resMen.GetString("color", ci);
+            string height = _resMen.GetString("high", ci);
+            string width = _resMen.GetString("width", ci);
+            string boardSize = _resMen.GetString("boardSize", ci);
+            string pricesm = _resMen.GetString("pricesm", ci);
+            string price = _resMen.GetString("price", ci);
+            string width1 = _resMen.GetString("vaneer", ci) + _resMen.GetString("width", ci) + " 1";
+            string width2 = _resMen.GetString("vaneer", ci) + _resMen.GetString("width", ci) + " 2";
+            string height1 = _resMen.GetString("vaneer", ci) + _resMen.GetString("high", ci) + " 1";
+            string height2 = _resMen.GetString("vaneer", ci) + _resMen.GetString("high", ci) + " 2";
+            string totalVaneer = _resMen.GetString("totalVaneer", ci);
+            string vaneerPriceLm = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("pricelm", ci);
+            string vaneerPrice = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("price", ci);
+            string quantity = _resMen.GetString("quantity", ci); //add to res
+            string boardPrice = _resMen.GetString("boardPrice", ci); //add to res
+
+            font = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular, GraphicsUnit.Point);
+
+            //test
+            e.Graphics.DrawString(string.Join(" ", new string[]
+            {
+                thickness, color, height, width, boardSize, pricesm, price, width1, width2, height1, height2,
+                totalVaneer, vaneerPriceLm, vaneerPrice, quantity, boardPrice
+            }), font, Brushes.Black, 20, 60);
+
+
+
+
             Rectangle[] rects = new Rectangle[]
             {
                 new Rectangle(20,40,20,20),
@@ -56,7 +93,7 @@ namespace MebelkiLogic
                 new Rectangle(80,40,20,20)
             };
             
-            e.Graphics.DrawRectangles(Pens.Black, rects);*/
+            e.Graphics.DrawRectangles(Pens.Black, rects);
         }
     }
 }

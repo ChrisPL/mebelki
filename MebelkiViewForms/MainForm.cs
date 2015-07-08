@@ -263,7 +263,7 @@ namespace MebelkiViewForms
 
         private void previewToolStripMenuItem_Click(object sender, EventArgs e)
         { 
-            var reportDoc = new ReportDocument(Order.GetSingleton());
+            var reportDoc = new ReportDocument(Order.GetSingleton(), new ResourceManager("MebelkiViewForms.Resource.res", typeof(MainForm).Assembly));
             printPreviewDialog1.Document = reportDoc;
             if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
             {
