@@ -148,7 +148,7 @@
     <value>&amp;Save</value>
   </data>
   <data name="_new" xml:space="preserve">
-    <value>$New</value>
+    <value>&amp;New</value>
   </data>
   <data name="details" xml:space="preserve">
     <value>Details</value>
@@ -224,5 +224,14 @@
   </data>
   <data name="deleteFurniture" xml:space="preserve">
     <value>&amp;Delete furniture</value>
+  </data>
+  <data name="boardSize" xml:space="preserve">
+    <value>Board size [m^2]</value>
+  </data>
+  <data name="totalVaneer" xml:space="preserve">
+    <value>Total vaneer</value>
+  </data>
+  <data name="vaneer" xml:space="preserve">
+    <value>Vaneer</value>
   </data>
 </root>
