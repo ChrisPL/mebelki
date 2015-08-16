@@ -7,6 +7,7 @@ using System.Net.NetworkInformation;
 using MebelkiModel;
 using System.Threading;
 using System.Resources;
+using System.Runtime.CompilerServices;
 
 namespace MebelkiLogic
 {
@@ -43,13 +44,11 @@ namespace MebelkiLogic
         {
             PrintHeader(e);
             var font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular, GraphicsUnit.Point);
-            Single y = 40;
+            int y = 80;
             foreach (KeyValuePair<Board, int> pair in _boardsCount)
             {
-                var printString = pair.Key + " x " + pair.Value;
-                e.Graphics.DrawString(printString,
-                    font, Brushes.Black, 20, y);
-                y += e.Graphics.MeasureString(printString, font).Height;
+                _grid.PrintRow(e.Graphics, new Point(20,y),pair);
+                y += 20;
             }
         }
 
@@ -67,24 +66,17 @@ namespace MebelkiLogic
             string boardSize = _resMen.GetString("boardSize", ci);
             string pricesm = _resMen.GetString("pricesm", ci);
             string price = _resMen.GetString("price", ci);
-            string width1 = _resMen.GetString("vaneer", ci) + _resMen.GetString("width", ci) + " 1";
-            string width2 = _resMen.GetString("vaneer", ci) + _resMen.GetString("width", ci) + " 2";
-            string height1 = _resMen.GetString("vaneer", ci) + _resMen.GetString("high", ci) + " 1";
-            string height2 = _resMen.GetString("vaneer", ci) + _resMen.GetString("high", ci) + " 2";
+            string width1 = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("width", ci) + " 1";
+            string width2 = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("width", ci) + " 2";
+            string height1 = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("high", ci) + " 1";
+            string height2 = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("high", ci) + " 2";
             string totalVaneer = _resMen.GetString("totalVaneer", ci);
             string vaneerPriceLm = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("pricelm", ci);
             string vaneerPrice = _resMen.GetString("vaneer", ci) + " " + _resMen.GetString("price", ci);
             string quantity = _resMen.GetString("quantity", ci); //add to res
             string boardPrice = _resMen.GetString("boardPrice", ci); //add to res
 
-            font = new Font(FontFamily.GenericSerif, 10, FontStyle.Regular, GraphicsUnit.Point);
-
-            //test
-            //e.Graphics.DrawString(string.Join(" ", new string[]
-            //{
-            //    thickness, color, height, width, boardSize, pricesm, price, width1, width2, height1, height2,
-            //    totalVaneer, vaneerPriceLm, vaneerPrice, quantity, boardPrice
-            //}), font, Brushes.Black, 20, 60);
+            font = new Font(FontFamily.GenericSerif, 9, FontStyle.Bold, GraphicsUnit.Point);
 
             _grid = new ReportDocumentGrid(
                 e.Graphics, font,
@@ -142,16 +134,7 @@ namespace MebelkiLogic
             e.Graphics.DrawString(boardPrice, font, Brushes.Black, x, 62);
           //  x += e.Graphics.MeasureString(boardPrice, font).ToSize().Width + 5;
 
-
-            Rectangle[] rects = new Rectangle[]
-            {
-                new Rectangle(20,40,20,20),
-                new Rectangle(40,40,20,20),
-                new Rectangle(60,40,20,20),
-                new Rectangle(80,40,20,20)
-            };
             
-            e.Graphics.DrawRectangles(Pens.Black, rects);
         }
     }
 }

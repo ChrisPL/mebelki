@@ -123,10 +123,28 @@
   <data name="CustomColor" xml:space="preserve">
     <value>Niestandardowy kolor</value>
   </data>
+  <data name="Height1" xml:space="preserve">
+    <value>Wysokość1</value>
+  </data>
+  <data name="Height2" xml:space="preserve">
+    <value>Wysokość1</value>
+  </data>
+  <data name="NewClient" xml:space="preserve">
+    <value>Nowy klient</value>
+  </data>
+  <data name="NewFurniture" xml:space="preserve">
+    <value>Nowy mebel</value>
+  </data>
   <data name="OnePerSideVaneerException" xml:space="preserve">
     <value>Płyta może mieć tylko jedną okleinę na stronę.</value>
   </data>
   <data name="OverFourVaneersException" xml:space="preserve">
     <value>Płyta może mieć najwyżej 4 okleiny.</value>
+  </data>
+  <data name="Width1" xml:space="preserve">
+    <value>Szerokość1</value>
+  </data>
+  <data name="Width2" xml:space="preserve">
+    <value>Szerokość2</value>
   </data>
 </root>

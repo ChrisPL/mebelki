@@ -20,6 +20,8 @@ namespace MebelkiModel
 
         public Material Material { get; set; }
 
+        public String Size => (High.ValueMeter*Width.ValueMeter) + "m^2";
+
         public List<Vaneer> Vaneers;
 
         public List<Vaneer> GetVaneers()

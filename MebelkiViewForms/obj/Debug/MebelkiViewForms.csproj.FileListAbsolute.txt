@@ -25,3 +25,6 @@ C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiViewForms\bi
 C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiViewForms\bin\Debug\MebelkiLogic.pdb
 C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiViewForms\obj\Debug\MebelkiViewForms.VaneerDialog.resources
 C:\Users\Chris\Documents\Visual Studio 2015\Projects\Mebelki\MebelkiViewForms\obj\Debug\MebelkiViewForms.MaterialsDialog.resources
+C:\Users\Chris\documents\visual studio 2015\Projects\Mebelki\MebelkiViewForms\bin\Debug\pl\MebelkiViewForms.resources.dll
+C:\Users\Chris\documents\visual studio 2015\Projects\Mebelki\MebelkiViewForms\obj\Debug\MebelkiViewForms.Resource.res.pl.resources
+C:\Users\Chris\documents\visual studio 2015\Projects\Mebelki\MebelkiViewForms\obj\Debug\pl\MebelkiViewForms.resources.dll

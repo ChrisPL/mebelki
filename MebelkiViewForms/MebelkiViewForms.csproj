@@ -58,6 +58,11 @@
     <Compile Include="MaterialsDialog.Designer.cs">
       <DependentUpon>MaterialsDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resource\res.pl.Designer.cs">
+      <DependentUpon>res.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="VaneerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +110,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resource\res.pl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>res.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resource\res.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>res.Designer.cs</LastGenOutput>

@@ -57,6 +57,11 @@ namespace MebelkiViewForms
             saveToolStripMenuItem.Text = resMen.GetString("save", ci);
             exitToolStripMenuItem.Text = resMen.GetString("exit", ci);
 
+            //Print
+            printToolStripMenuItem.Text = resMen.GetString("print", ci);
+            printReportToolStripMenuItem.Text = resMen.GetString("printReport", ci);
+            previewToolStripMenuItem.Text = resMen.GetString("preview", ci);
+
             //Langauge
             languageToolStripMenuItem.Text = resMen.GetString("language", ci);
             englishToolStripMenuItem.Text = resMen.GetString("english", ci);
@@ -127,7 +132,7 @@ namespace MebelkiViewForms
             Order.FurnitureList.Clear();
             Order.MaterialList.Clear();
             
-            Order.Test();
+            //Order.Test();
             //Order.OrderReset();
 
             PopulateData();

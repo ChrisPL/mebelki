@@ -2,10 +2,10 @@
 {
     public enum LengthUnit
     {
-        km = 2,
+        km = 3,
         dm = 1,
         m = 0,
-        cm = -1,
-        mm = -2
+        cm = -2,
+        mm = -3
     }
 }

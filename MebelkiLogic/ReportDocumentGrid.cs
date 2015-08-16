@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using MebelkiModel;
+using MebelkiModel.Basic.Enums;
 
 namespace MebelkiLogic
 {
@@ -110,6 +114,68 @@ namespace MebelkiLogic
             g.DrawRectangles(Pens.Black, cells.ToArray());
 
             return startPoint;
+        }
+
+        public Point PrintRow(Graphics g, Point startPoint, KeyValuePair<Board, int> rowData)
+        {
+            var endPoint = PrintCells(g, startPoint);
+            FillCells(g, startPoint, rowData);
+            return endPoint;
+        }
+
+        public void FillCells(Graphics g, Point startPoint, KeyValuePair<Board, int> rowData)
+        {
+            var ci = Thread.CurrentThread.CurrentCulture;
+            Font f = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular, GraphicsUnit.Point);
+            var xy = startPoint;
+            xy.Offset(new Point(2, 2));
+            g.DrawString(rowData.Key.Material.Thick.ToString(), f, Brushes.Black, xy);
+            xy.X += _thicknessCell.Width;
+
+            g.DrawString(rowData.Key.FrontColor, f, Brushes.Black, xy);
+            xy.X += _colorCell.Width;
+
+            g.DrawString(rowData.Key.High.ToString(), f, Brushes.Black, xy);
+            xy.X += _heightCell.Width;
+
+            g.DrawString(rowData.Key.Width.ToString(), f, Brushes.Black, xy);
+            xy.X += _widthCell.Width;
+
+            g.DrawString(rowData.Key.Size, f, Brushes.Black, xy);
+            xy.X += _boardSizeCell.Width;
+
+            g.DrawString(rowData.Key.Material.PriceSm.ToString(ci), f, Brushes.Black, xy);
+            xy.X += _pricesmCell.Width;
+
+            g.DrawString(rowData.Key.GetPrice().ToString(ci), f, Brushes.Black, xy);
+            xy.X += _priceCell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Any(v => v.Side == Side.Width1) ? "X" : "", f, Brushes.Black, xy);
+            xy.X += _width1Cell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Any(v => v.Side == Side.Width2) ? "X" : "", f, Brushes.Black, xy);
+            xy.X += _width2Cell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Any(v => v.Side == Side.Height1) ? "X" : "", f, Brushes.Black, xy);
+            xy.X += _height1Cell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Any(v => v.Side == Side.Height2) ? "X" : "", f, Brushes.Black, xy);
+            xy.X += _height2Cell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Sum(v => v.Length).ToString(ci), f, Brushes.Black, xy);
+            xy.X += _totalVaneerCell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Count > 0 ? rowData.Key.GetVaneers().Max(v => v.PriceLm).ToString(ci) : "", f, Brushes.Black, xy);
+            xy.X += _vaneerPriceLmCell.Width;
+
+            g.DrawString(rowData.Key.GetVaneers().Sum(v => v.GetTotalPrice()).ToString(ci), f, Brushes.Black, xy);
+            xy.X += _vaneerPriceCell.Width;
+
+            g.DrawString(rowData.Value.ToString(), f, Brushes.Black, xy);
+            xy.X += _quantityCell.Width;
+
+            g.DrawString((rowData.Value * rowData.Key.GetPrice()).ToString(ci), f, Brushes.Black, xy);
+            xy.X += _boardPriceCell.Width;
         }
     }
 }

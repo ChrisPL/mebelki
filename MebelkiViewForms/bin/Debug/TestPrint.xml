@@ -6,6 +6,18 @@
       <Name>New Furniture</Name>
       <Boards>
         <Board>
+          <Vaneers>
+            <Vaneer>
+              <Side>Height1</Side>
+              <Length>0.5</Length>
+              <PriceLm>1</PriceLm>
+            </Vaneer>
+            <Vaneer>
+              <Side>Width1</Side>
+              <Length>0.5</Length>
+              <PriceLm>1</PriceLm>
+            </Vaneer>
+          </Vaneers>
           <Position />
           <FrontColor>brown</FrontColor>
           <High>
@@ -29,6 +41,18 @@
           </Material>
         </Board>
         <Board>
+          <Vaneers>
+            <Vaneer>
+              <Side>Height1</Side>
+              <Length>0.5</Length>
+              <PriceLm>3</PriceLm>
+            </Vaneer>
+            <Vaneer>
+              <Side>Height2</Side>
+              <Length>0.5</Length>
+              <PriceLm>3</PriceLm>
+            </Vaneer>
+          </Vaneers>
           <Position />
           <FrontColor>brown</FrontColor>
           <High>
@@ -52,6 +76,18 @@
           </Material>
         </Board>
         <Board>
+          <Vaneers>
+            <Vaneer>
+              <Side>Width1</Side>
+              <Length>0.5</Length>
+              <PriceLm>4</PriceLm>
+            </Vaneer>
+            <Vaneer>
+              <Side>Width2</Side>
+              <Length>0.5</Length>
+              <PriceLm>4</PriceLm>
+            </Vaneer>
+          </Vaneers>
           <Position />
           <FrontColor>brown</FrontColor>
           <High>
@@ -75,6 +111,7 @@
           </Material>
         </Board>
         <Board>
+          <Vaneers />
           <Position />
           <FrontColor>brown</FrontColor>
           <High>
@@ -98,6 +135,7 @@
           </Material>
         </Board>
         <Board>
+          <Vaneers />
           <Position />
           <FrontColor>bege</FrontColor>
           <High>
@@ -121,6 +159,7 @@
           </Material>
         </Board>
         <Board>
+          <Vaneers />
           <Position />
           <FrontColor>brown</FrontColor>
           <High>

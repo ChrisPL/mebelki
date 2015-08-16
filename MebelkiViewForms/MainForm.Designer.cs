@@ -199,15 +199,14 @@ namespace MebelkiViewForms
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.printReportToolStripMenuItem});
+            this.printReportToolStripMenuItem,
+            this.previewToolStripMenuItem});
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.printToolStripMenuItem.Text = "Print";
             // 
             // printReportToolStripMenuItem
             // 
-            this.printReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.previewToolStripMenuItem});
             this.printReportToolStripMenuItem.Name = "printReportToolStripMenuItem";
             this.printReportToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.printReportToolStripMenuItem.Text = "Print Report";
@@ -216,7 +215,7 @@ namespace MebelkiViewForms
             // previewToolStripMenuItem
             // 
             this.previewToolStripMenuItem.Name = "previewToolStripMenuItem";
-            this.previewToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.previewToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.previewToolStripMenuItem.Text = "Preview";
             this.previewToolStripMenuItem.Click += new System.EventHandler(this.previewToolStripMenuItem_Click);
             // 
@@ -231,16 +230,16 @@ namespace MebelkiViewForms
             // 
             // englishToolStripMenuItem
             // 
-            this.englishToolStripMenuItem.Checked = true;
-            this.englishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.englishToolStripMenuItem.Text = "English";
             // 
             // polishToolStripMenuItem
             // 
+            this.polishToolStripMenuItem.Checked = true;
+            this.polishToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.polishToolStripMenuItem.Name = "polishToolStripMenuItem";
-            this.polishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.polishToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.polishToolStripMenuItem.Text = "Polish";
             // 
             // materialsToolStripMenuItem
@@ -430,8 +429,8 @@ namespace MebelkiViewForms
         private ToolStripMenuItem printToolStripMenuItem;
         private PrintDialog printDialog1;
         private ToolStripMenuItem printReportToolStripMenuItem;
-        private ToolStripMenuItem previewToolStripMenuItem;
         private PrintPreviewDialog printPreviewDialog1;
+        private ToolStripMenuItem previewToolStripMenuItem;
     }
 }
 
